@@ -30,6 +30,7 @@ public class DashBoard extends JFrame implements ActionListener{
 		mb.add(hotel);
 		
 		JMenuItem reception = new JMenuItem("RECEPTION");
+		reception.addActionListener(this);
 		hotel.add(reception);
 		
 		
@@ -61,6 +62,9 @@ public class DashBoard extends JFrame implements ActionListener{
 		}
 		else if(ae.getActionCommand().equals("ADD DRIVERS")) {
 			new AddDrivers();
+		}
+		else if(ae.getActionCommand().equals("RECEPTION")) {
+			new Reception();
 		}
 	}
 

@@ -14,7 +14,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblname = new JLabel("NAME");
 		lblname.setBounds(60, 30, 120, 30);
-		lblname.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblname.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblname);
 		
 		tfname =new JTextField();
@@ -23,7 +23,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblage = new JLabel("AGE");
 		lblage.setBounds(60, 80, 120, 30);
-		lblage.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblage.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblage);
 		
 		tfage =new JTextField();
@@ -32,18 +32,18 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblgender = new JLabel("GENDER");
 		lblgender.setBounds(60, 130, 120, 30);
-		lblgender.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblgender.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblgender);
 		
 		rbmale = new JRadioButton("Male");
 		rbmale.setBounds(200,130,70,30);
-		rbmale.setFont(new Font("Monospaced",Font.PLAIN,14));
+		rbmale.setFont(new Font("Tahoma",Font.PLAIN,14));
 		rbmale.setBackground(Color.white);
 		add(rbmale);
 		
 		rbfemale = new JRadioButton("Female");
 		rbfemale.setBounds(280,130,120,30);
-		rbfemale.setFont(new Font("Monospaced",Font.PLAIN,14));
+		rbfemale.setFont(new Font("Tahoma",Font.PLAIN,14));
 		rbfemale.setBackground(Color.white);
 		add(rbfemale);
 		
@@ -53,7 +53,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lbljob = new JLabel("JOB");
 		lbljob.setBounds(60, 180, 120, 30);
-		lbljob.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lbljob.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lbljob);
 		
 		String str[]= {"Select","Front Desk Clerks","Porters","Housekeeping","Kitchen Staff","Room Service","Chefs","Waiter/Waitress","Manager","Accountants"};
@@ -64,7 +64,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblsalary = new JLabel("SALARY");
 		lblsalary.setBounds(60, 230, 120, 30);
-		lblsalary.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblsalary.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblsalary);
 		
 		tfsalary =new JTextField();
@@ -73,7 +73,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblphone = new JLabel("PHONE");
 		lblphone.setBounds(60, 280, 120, 30);
-		lblphone.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblphone.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblphone);
 		
 		tfphone =new JTextField();
@@ -82,7 +82,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblemail = new JLabel("EMAIL");
 		lblemail.setBounds(60, 330, 120, 30);
-		lblemail.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblemail.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblemail);
 		
 		tfemail =new JTextField();
@@ -91,7 +91,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		
 		JLabel lblaadhar = new JLabel("AADHAR");
 		lblaadhar.setBounds(60, 380, 120, 30);
-		lblaadhar.setFont(new Font("Monospaced",Font.PLAIN,17));
+		lblaadhar.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(lblaadhar);
 		
 		tfaadhar =new JTextField();
@@ -102,7 +102,7 @@ public class Addemployees extends JFrame implements ActionListener{
 		submit.setBackground(Color.black);
 		submit.setForeground(Color.white);
 		submit.setBounds(200, 430, 150, 30);
-		submit.setFont(new Font("Monospaced",Font.PLAIN,17));
+		submit.setFont(new Font("Tahoma",Font.PLAIN,17));
 		submit.addActionListener(this);
 		add(submit);
 		
