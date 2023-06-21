@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 public class Reception extends JFrame implements ActionListener{
-	JButton newCustomer,rooms , Department;
+	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer;
 
 	Reception() {
 		getContentPane().setBackground(Color.WHITE);
@@ -34,22 +34,25 @@ public class Reception extends JFrame implements ActionListener{
 		Department.addActionListener(this);
 		add(Department);
 		
-		JButton allEmployee =new JButton("Employee Info");
+		allEmployee =new JButton("Employee Info");
 		allEmployee.setBounds(10, 150, 200, 30);
 		allEmployee.setBackground(Color.black);
 		allEmployee.setForeground(Color.white);
+		allEmployee.addActionListener(this);
 		add(allEmployee);
 		
-		JButton customer =new JButton("Customer Info");
+		customer =new JButton("Customer Info");
 		customer.setBounds(10, 190, 200, 30);
 		customer.setBackground(Color.black);
 		customer.setForeground(Color.white);
+		customer.addActionListener(this);
 		add(customer);
 		
-		JButton managerInfo =new JButton("Manager Info");
+		managerInfo =new JButton("Manager Info");
 		managerInfo.setBounds(10, 230, 200, 30);
 		managerInfo.setBackground(Color.black);
 		managerInfo.setForeground(Color.white);
+		managerInfo.addActionListener(this);
 		add(managerInfo);
 		
 		JButton checkout =new JButton("Checkout");
@@ -109,6 +112,18 @@ public class Reception extends JFrame implements ActionListener{
 		else if(ae.getSource()==Department) {
 			setVisible(false);
 			new Department();
+		}
+		else if(ae.getSource()==allEmployee) {
+			setVisible(false);
+			new EmployeeInfo();
+		}
+		else if(ae.getSource()==managerInfo) {
+			setVisible(false);
+			new ManagerInfo();
+		}
+		else if(ae.getSource()==customer) {
+			setVisible(false);
+			new CustomerInfo();
 		}
 	}
 
