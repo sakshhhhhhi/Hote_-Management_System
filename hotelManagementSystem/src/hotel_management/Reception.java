@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 public class Reception extends JFrame implements ActionListener{
-	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer;
+	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer,searchRoom;
 
 	Reception() {
 		getContentPane().setBackground(Color.WHITE);
@@ -79,10 +79,11 @@ public class Reception extends JFrame implements ActionListener{
 		pickup.setForeground(Color.white);
 		add(pickup);
 		
-		JButton searchRoom =new JButton("Search Room");
+		searchRoom =new JButton("Search Room");
 		searchRoom.setBounds(10, 430, 200, 30);
 		searchRoom.setBackground(Color.black);
 		searchRoom.setForeground(Color.white);
+		searchRoom.addActionListener(this);
 		add(searchRoom);
 		
 		JButton logout =new JButton("Logout");
@@ -124,6 +125,10 @@ public class Reception extends JFrame implements ActionListener{
 		else if(ae.getSource()==customer) {
 			setVisible(false);
 			new CustomerInfo();
+		}
+		else if (ae.getSource()==searchRoom) {
+			setVisible(false);
+			new SearchRoom();
 		}
 	}
 

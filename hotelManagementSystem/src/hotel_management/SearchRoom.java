@@ -12,7 +12,7 @@ import src.net.proteanit.sql.*;
 
 public class SearchRoom extends JFrame implements ActionListener {
 	JTable table;
-	JButton back;
+	JButton back,submit;
 	JComboBox bedType;
 	JCheckBox available;
 
@@ -41,23 +41,23 @@ public class SearchRoom extends JFrame implements ActionListener {
 		add(available);
 		
 		JLabel l1 = new JLabel("Room Number");
-		l1.setBounds(0,10,100,20);
+		l1.setBounds(10,160,100,20);
 		add(l1);
 		
 		JLabel l2 = new JLabel("Availability");
-		l2.setBounds(100,10,100,20);
+		l2.setBounds(200,160,100,20);
 		add(l2);
 		
 		JLabel l3 = new JLabel("Status");
-		l3.setBounds(200,10,100,20);
+		l3.setBounds(400,160,100,20);
 		add(l3);
 		
 		JLabel l4 = new JLabel("Price");
-		l4.setBounds(300,10,100,20);
+		l4.setBounds(600,160,100,20);
 		add(l4);
 		
 		JLabel l5 = new JLabel("Bed Type");
-		l5.setBounds(400,10,100,20);
+		l5.setBounds(800,160,100,20);
 		add(l5);
 		
 		table=new JTable();
@@ -73,21 +73,50 @@ public class SearchRoom extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 		
+		submit = new JButton("SUBMIT");
+		submit.setBackground(Color.black);
+		submit.setForeground(Color.white);
+		submit.addActionListener(this);
+		submit.setBounds(300,520,120,30);
+		add(submit);
+		
+		
 		back = new JButton("BACK");
 		back.setBackground(Color.black);
 		back.setForeground(Color.white);
 		back.addActionListener(this);
-		back.setBounds(180,500,120,30);
+		back.setBounds(500,520,120,30);
 		add(back);
 		
 		
-		setBounds(300,200,1050,600);
+		setBounds(300,200,1000,600);
 		setVisible(true);
 	}
+	
 	public void actionPerformed(ActionEvent ae) {
+		if(ae.getSource()==submit) {
+			try {
+				String query1 ="select * from room where bed_type= '"+bedType.getSelectedItem()+"'";
+				String query2 ="select * from room where availability='Available'AND bed_type ='"+bedType.getSelectedItem()+"'";
+				Conn conn = new Conn();
+				ResultSet rs ;
+				if(available.isSelected()) {
+					rs =conn.s.executeQuery(query2);
+				}
+				else {
+					rs =conn.s.executeQuery(query1);
+				}
+				table.setModel(DbUtils.resultSetToTableModel(rs));
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	else {
 		setVisible(false);
 		new Reception();
-		
+	}
 	}
 
 	public static void main(String[] args) {
