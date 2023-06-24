@@ -23,6 +23,7 @@ public class Room extends JFrame implements ActionListener {
 		JLabel image =new JLabel(i1);
 		image.setBounds(500,45,600,450);
 		add(image);
+		
 		JLabel l1 = new JLabel("Room Number");
 		l1.setBounds(0,10,100,20);
 		add(l1);
