@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 public class Reception extends JFrame implements ActionListener{
-	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer,searchRoom,update,roomStatus;
+	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer,searchRoom,update,roomStatus,pickup,checkout;
 
 	Reception() {
 		getContentPane().setBackground(Color.WHITE);
@@ -55,10 +55,11 @@ public class Reception extends JFrame implements ActionListener{
 		managerInfo.addActionListener(this);
 		add(managerInfo);
 		
-		JButton checkout =new JButton("Checkout");
+		checkout =new JButton("Checkout");
 		checkout.setBounds(10, 270, 200, 30);
 		checkout.setBackground(Color.black);
 		checkout.setForeground(Color.white);
+		checkout.addActionListener(this);
 		add(checkout);
 		
 		update =new JButton("Update Status");
@@ -75,10 +76,11 @@ public class Reception extends JFrame implements ActionListener{
 		roomStatus.addActionListener(this);
 		add(roomStatus);
 		
-		JButton pickup =new JButton("Pick-Up Service");
+		pickup =new JButton("Pick-Up Service");
 		pickup.setBounds(10, 390, 200, 30);
 		pickup.setBackground(Color.black);
 		pickup.setForeground(Color.white);
+		pickup.addActionListener(this);
 		add(pickup);
 		
 		searchRoom =new JButton("Search Room");
@@ -139,6 +141,14 @@ public class Reception extends JFrame implements ActionListener{
 		else if (ae.getSource()==roomStatus) {
 			setVisible(false);
 			new UpdateRoom();
+		}
+		else if (ae.getSource()==pickup) {
+			setVisible(false);
+			new PickUp();
+		}
+		else if (ae.getSource()==checkout) {
+			setVisible(false);
+//			new CheckOut();
 		}
 	}
 
