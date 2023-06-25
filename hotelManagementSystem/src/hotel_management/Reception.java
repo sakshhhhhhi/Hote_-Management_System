@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 public class Reception extends JFrame implements ActionListener{
-	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer,searchRoom,update,roomStatus,pickup,checkout;
+	JButton newCustomer,rooms , Department, allEmployee,managerInfo, customer,searchRoom,update,roomStatus,pickup,checkout,logout;
 
 	Reception() {
 		getContentPane().setBackground(Color.WHITE);
@@ -90,10 +90,11 @@ public class Reception extends JFrame implements ActionListener{
 		searchRoom.addActionListener(this);
 		add(searchRoom);
 		
-		JButton logout =new JButton("Logout");
+		logout =new JButton("Logout");
 		logout.setBounds(10, 470, 200, 30);
 		logout.setBackground(Color.black);
 		logout.setForeground(Color.white);
+		logout.addActionListener(this);
 		add(logout);
 		
 		ImageIcon i1 = new ImageIcon(System.getProperty("user.dir")+("/src/hotel_management/icons/hotel2345.jpg"));
@@ -148,7 +149,11 @@ public class Reception extends JFrame implements ActionListener{
 		}
 		else if (ae.getSource()==checkout) {
 			setVisible(false);
-//			new CheckOut();
+        	new Checkout();
+		}
+		else if (ae.getSource()==logout) {
+			setVisible(false);
+			System.exit(0);
 		}
 	}
 
